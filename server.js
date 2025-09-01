@@ -15,15 +15,18 @@ if (fs.existsSync(xpDataPath)) {
   xpData = JSON.parse(fs.readFileSync(xpDataPath, "utf-8"));
 }
 
+// فانکشنی برای حذف کوتیشن key ها
+function stringifyWithoutQuotes(obj) {
+  return JSON.stringify(obj, null, 2).replace(/"([^"]+)":/g, "$1:");
+}
+
 // روت متادیتا
 app.get("/metadata/:id", (req, res) => {
-  res.setHeader("Content-Type", "application/json; charset=utf-8");
-
   const id = parseInt(req.params.id, 10);
   let nft = allMetadata.find((m) => m.edition === id + 1);
 
   if (!nft) {
-    return res.status(404).json({ error: "Token not found" });
+    return res.status(404).send("error: Token not found");
   }
 
   if (xpData[id]) {
@@ -39,7 +42,8 @@ app.get("/metadata/:id", (req, res) => {
     };
   }
 
-  res.json(nft);
+  // خروجی با key بدون کوتیشن
+  res.type("text/plain").send(stringifyWithoutQuotes(nft));
 });
 
 // استاتیک (مثلا بخوای بعداً چیزی بذاری)
