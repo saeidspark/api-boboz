@@ -17,14 +17,15 @@ if (fs.existsSync(xpDataPath)) {
 
 // روت متادیتا
 app.get("/metadata/:id", (req, res) => {
+  res.setHeader("Content-Type", "application/json"); // 👈 اضافه شد
+
   const id = parseInt(req.params.id, 10);
-  let nft = allMetadata.find((m) => m.edition === id + 1); // 👈 تغییر اینجا
+  let nft = allMetadata.find((m) => m.edition === id + 1);
 
   if (!nft) {
     return res.status(404).json({ error: "Token not found" });
   }
 
-  // آپدیت داینامیک XP/Level
   if (xpData[id]) {
     nft = {
       ...nft,
@@ -33,8 +34,8 @@ app.get("/metadata/:id", (req, res) => {
           (attr) => attr.trait_type !== "XP" && attr.trait_type !== "Level"
         ),
         { trait_type: "Level", value: xpData[id].level },
-        { trait_type: "XP", value: xpData[id].xp }
-      ]
+        { trait_type: "XP", value: xpData[id].xp },
+      ],
     };
   }
 
