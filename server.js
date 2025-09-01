@@ -18,7 +18,7 @@ if (fs.existsSync(xpDataPath)) {
 // روت متادیتا
 app.get("/metadata/:id", (req, res) => {
   const id = parseInt(req.params.id, 10);
-  let nft = allMetadata.find((m) => m.edition === id);
+  let nft = allMetadata.find((m) => m.edition === id + 1); // 👈 تغییر اینجا
 
   if (!nft) {
     return res.status(404).json({ error: "Token not found" });

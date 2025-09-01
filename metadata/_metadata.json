@@ -2,7 +2,7 @@
   {
     "name": "Bobo #1",
     "description": "Test",
-    "image": "ipfs://QmReeuXsWnyS42Z14jd1DoAseoSi1ozQsFXc2YZY9sBCbe/1.png",
+    "image": "https://ipfs.io/ipfs/QmReeuXsWnyS42Z14jd1DoAseoSi1ozQsFXc2YZY9sBCbe/1.png",
     "dna": "c5cb9167a06b5d260bfa63f345ab391b04e220aa",
     "edition": 1,
     "date": 1755497729197,
@@ -44,7 +44,7 @@
   {
     "name": "Bobo #2",
     "description": "Test",
-    "image": "ipfs://QmReeuXsWnyS42Z14jd1DoAseoSi1ozQsFXc2YZY9sBCbe/2.png",
+    "image": "https://ipfs.io/ipfs/QmReeuXsWnyS42Z14jd1DoAseoSi1ozQsFXc2YZY9sBCbe/2.png",
     "dna": "c2109232236d021761738558d41325db2f01751b",
     "edition": 2,
     "date": 1755497732915,
@@ -86,7 +86,7 @@
   {
     "name": "Bobo #3",
     "description": "Test",
-    "image": "ipfs://QmReeuXsWnyS42Z14jd1DoAseoSi1ozQsFXc2YZY9sBCbe/3.png",
+    "image": "https://ipfs.io/ipfs/QmReeuXsWnyS42Z14jd1DoAseoSi1ozQsFXc2YZY9sBCbe/3.png",
     "dna": "7a3f2fafa7c65918a183a1766606bdb2090213a9",
     "edition": 3,
     "date": 1755497735754,
