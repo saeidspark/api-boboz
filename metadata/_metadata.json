@@ -7,45 +7,9 @@
   },
   {
     "id": 1,
-    "name": "Bobo #2",
-    "description": "Test",
-    "image": "ipfs://QmReeuXsWnyS42Z14jd1DoAseoSi1ozQsFXc2YZY9sBCbe/2.png",
-    "dna": "c2109232236d021761738558d41325db2f01751b",
-    "date": 1755497732915,
-    "attributes": [
-      {
-        "trait_type": "Background",
-        "value": "Mercury"
-      },
-      {
-        "trait_type": "Skin",
-        "value": "Deep Rose"
-      },
-      {
-        "trait_type": "Clothing",
-        "value": "None"
-      },
-      {
-        "trait_type": "Mouth",
-        "value": "Zigzag Stitches"
-      },
-      {
-        "trait_type": "Accessory",
-        "value": "None"
-      },
-      {
-        "trait_type": "Headgear",
-        "value": "None"
-      },
-      {
-        "trait_type": "Eyes",
-        "value": "Apologetic"
-      },
-      {
-        "trait_type": "Form",
-        "value": "Dormant"
-      }
-    ]
+    "name": "Green Circle",
+    "description": "A green circle NFT from the Shapes Collection",
+    "image": "https://gateway.ipfscdn.io/ipfs/QmXXjx3aJCs9W9mN35Aade6etSoceqMk8ykkasbB87MaLt/1.png"
   },
   {
     "id": 2,
