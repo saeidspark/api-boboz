@@ -3,43 +3,7 @@
     "id": 0,
     "name": "Bobo #1",
     "description": "Test",
-    "image": "ipfs://QmReeuXsWnyS42Z14jd1DoAseoSi1ozQsFXc2YZY9sBCbe/1.png",
-    "dna": "c5cb9167a06b5d260bfa63f345ab391b04e220aa",
-    "date": 1755497729197,
-    "attributes": [
-      {
-        "trait_type": "Background",
-        "value": "Mercury"
-      },
-      {
-        "trait_type": "Skin",
-        "value": "Deep Rose"
-      },
-      {
-        "trait_type": "Clothing",
-        "value": "Crimson Skull TShirt"
-      },
-      {
-        "trait_type": "Mouth",
-        "value": "Zigzag Stitches"
-      },
-      {
-        "trait_type": "Accessory",
-        "value": "None"
-      },
-      {
-        "trait_type": "Headgear",
-        "value": "None"
-      },
-      {
-        "trait_type": "Eyes",
-        "value": "^^"
-      },
-      {
-        "trait_type": "Form",
-        "value": "Awakened"
-      }
-    ]
+    "image": "ipfs://QmReeuXsWnyS42Z14jd1DoAseoSi1ozQsFXc2YZY9sBCbe/2.png"
   },
   {
     "id": 1,
