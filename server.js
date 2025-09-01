@@ -17,7 +17,7 @@ if (fs.existsSync(xpDataPath)) {
 
 // روت متادیتا
 app.get("/metadata/:id", (req, res) => {
-  res.setHeader("Content-Type", "application/json"); // 👈 اضافه شد
+  res.setHeader("Content-Type", "application/json; charset=utf-8");
 
   const id = parseInt(req.params.id, 10);
   let nft = allMetadata.find((m) => m.edition === id + 1);
