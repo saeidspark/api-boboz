@@ -2,33 +2,31 @@ import express from "express";
 import fs from "fs";
 import path from "path";
 
-// express app
 const app = express();
 
-// مسیر فایل‌ها
+// مسیر فایل متادیتا
 const metadataPath = path.join(process.cwd(), "metadata", "_metadata.json");
 const allMetadata = JSON.parse(fs.readFileSync(metadataPath, "utf-8"));
 
+// مسیر فایل XP/Level
 const xpDataPath = path.join(process.cwd(), "xpData.json");
 let xpData = {};
 if (fs.existsSync(xpDataPath)) {
   xpData = JSON.parse(fs.readFileSync(xpDataPath, "utf-8"));
 }
 
-// فانکشنی برای حذف کوتیشن key ها
-function stringifyWithoutQuotes(obj) {
-  return JSON.stringify(obj, null, 2).replace(/"([^"]+)":/g, "$1:");
-}
-
-// روت متادیتا
+// روت برای گرفتن یک NFT با id
 app.get("/metadata/:id", (req, res) => {
   const id = parseInt(req.params.id, 10);
+  
+  // پیدا کردن NFT براساس edition
   let nft = allMetadata.find((m) => m.edition === id + 1);
 
   if (!nft) {
-    return res.status(404).send("error: Token not found");
+    return res.status(404).json({ error: "Token not found" });
   }
 
+  // اضافه کردن XP و Level اگر موجود باشه
   if (xpData[id]) {
     nft = {
       ...nft,
@@ -42,12 +40,18 @@ app.get("/metadata/:id", (req, res) => {
     };
   }
 
-  // خروجی با key بدون کوتیشن
-  res.type("text/plain").send(stringifyWithoutQuotes(nft));
+  // حتماً JSON استاندارد برگردان
+  res.setHeader("Content-Type", "application/json; charset=utf-8");
+  res.json(nft);
 });
 
-// استاتیک (مثلا بخوای بعداً چیزی بذاری)
+// اگر بخوای همه متادیتاها رو هم داشته باشی
+app.get("/metadata/all", (req, res) => {
+  res.setHeader("Content-Type", "application/json; charset=utf-8");
+  res.json(allMetadata);
+});
+
+// استاتیک (مثلاً برای public)
 app.use("/static", express.static(path.join(process.cwd(), "public")));
 
-// 🚀 خروجی برای Vercel
 export default app;
