@@ -20,7 +20,7 @@ app.get("/metadata/:id", (req, res) => {
   const id = parseInt(req.params.id, 10);
   
   // پیدا کردن NFT براساس edition
-  let nft = allMetadata.find((m) => m.id === id);
+  let nft = allMetadata.find((m) => m.id === id + 1);
 
   if (!nft) {
     return res.status(404).json({ error: "Token not found" });
